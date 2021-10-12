@@ -11,7 +11,7 @@ url: 'https://github.com/pavannelluru/maven-webapplication.git'
  {
   sh "${mvnHome}/bin/mvn clean package"
  }
-  stage('ExecuteSonarQubeReport')
+  /* stage('ExecuteSonarQubeReport')
  {
   sh "${mvnHome}/bin/mvn sonar:sonar"
  }
@@ -27,7 +27,7 @@ url: 'https://github.com/pavannelluru/maven-webapplication.git'
   {
     sh  "scp -o StrictHostKeyChecking=no target/maven-web-application.war ec2-user@3.109.2.77:/opt/apache-tomcat-9.0.53/webapps/"
   }
-  }
+  }*/
    stage('SendEmailNotification')
  {
     emailext body: '''Build is Completed.
